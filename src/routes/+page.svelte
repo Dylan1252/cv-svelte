@@ -1,2 +1,4 @@
-<h1>Welcome kiddo to sveltekittot</h1>
+<h1>Welcome  to sveltekitt</h1>
 <p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+
+<a href="/testroute"> "go to testroute"</a>
