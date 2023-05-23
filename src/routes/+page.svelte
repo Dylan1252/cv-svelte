@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Section from '$components/Section.svelte';
+	import Section from 'components/Section.svelte';
 	import book from 'svelte-awesome/icons/book';
 	import briefcase from 'svelte-awesome/icons/briefcase';
 	import cogs from 'svelte-awesome/icons/cogs';
@@ -7,7 +7,7 @@
 </script>
 
 <div class="readable-area">
-	<a class="header" href="./photo.html">
+	<a class="header" href="/secondRoute">
 		<div class="header-text">
 			<h1>Squarepants, Spongebob</h1>
 			<p>Head Chef</p>
@@ -36,7 +36,7 @@
 				<li>
 					2014-2018
 					<br />
-					&emsp; New Kelp City Culinary College
+					 &emsp; New Kelp City Culinary College
 				</li>
 			</ul>
 		</Section>
@@ -64,31 +64,31 @@
 				<li>
 					<span>Jellyfish Hunting</span>
 					<div class="gauge">
-						<div class="bullet filled-bullet" />
-						<div class="bullet filled-bullet" />
-						<div class="bullet filled-bullet" />
-						<div class="bullet filled-bullet" />
-						<div class="bullet filled-bullet" />
+						<div class="bullet filled-bullet"></div>
+						<div class="bullet filled-bullet"></div>
+						<div class="bullet filled-bullet"></div>
+						<div class="bullet filled-bullet"></div>
+						<div class="bullet filled-bullet"></div>
 					</div>
 				</li>
 				<li>
 					<span>English</span>
 					<div class="gauge">
-						<div class="bullet filled-bullet" />
-						<div class="bullet filled-bullet" />
-						<div class="bullet filled-bullet" />
-						<div class="bullet filled-bullet" />
-						<div class="bullet" />
+						<div class="bullet filled-bullet"></div>
+						<div class="bullet filled-bullet"></div>
+						<div class="bullet filled-bullet"></div>
+						<div class="bullet filled-bullet"></div>
+						<div class="bullet"></div>
 					</div>
 				</li>
 				<li>
 					<span>Whale Singing</span>
 					<div class="gauge">
-						<div class="bullet filled-bullet" />
-						<div class="bullet filled-bullet" />
-						<div class="bullet filled-bullet" />
-						<div class="bullet" />
-						<div class="bullet" />
+						<div class="bullet filled-bullet"></div>
+						<div class="bullet filled-bullet"></div>
+						<div class="bullet filled-bullet"></div>
+						<div class="bullet"></div>
+						<div class="bullet"></div>
 					</div>
 				</li>
 			</ul>
@@ -97,8 +97,45 @@
 </div>
 
 <style>
+	.readable-area {
+		display: flex;
+		flex-direction: column;
+		background-color: #ffffff;
+		margin: 0 5%;
+	}
+
+	.header {
+		padding: 16px;
+		display: flex;
+		flex-direction: column-reverse;
+		align-items: center;
+		border-bottom: 2px solid black;
+		text-decoration: none;
+		color: #000000;
+	}
+
+	.header-text {
+		text-align: center;
+		flex: 1;
+		margin-right: 16px;
+	}
+
 	h1 {
 		font-family: 'peralta';
+	}
+
+	.avatar {
+		width: 128px;
+		height: 128px;
+		border: 4px solid #000000;
+		border-radius: 100%;
+	}
+
+	.content {
+		display: grid;
+		grid-template-columns: repeat(1, minmax(0, 1fr));
+		gap: 32px;
+		padding: 32px 32px;
 	}
 
 	ul {
@@ -130,54 +167,16 @@
 	}
 
 	.filled-bullet {
-		background-color: #fbc02d;
+		background-color: #F9FBE7;
 	}
 
-	.header-text {
-		text-align: end;
-		flex: 1;
-		margin-right: 16px;
-	}
-
-	.readable-area {
-		display: flex;
-		flex-direction: column;
-		background-color: #ffffff;
-		margin: 0 15%;
-		height: 100%;
-	}
-
-	.header {
-		padding: 16px;
-		display: flex;
-		flex: row;
-		align-items: center;
-		border-bottom: 2px solid black;
-		text-decoration: none;
-		color: #000000;
-	}
-
-	.content {
-		display: grid;
-		grid-template-columns: repeat(2, minmax(0, 1fr));
-		gap: 32px;
-		padding: 32px 32px;
-	}
-
-	img {
-		width: 128px;
-		height: 128px;
-		border: 4px solid #000000;
-		border-radius: 100%;
-	}
-
-	@media (max-width: 600px) {
+	@media (min-width: 600px) {
 		.header {
-			flex-direction: column-reverse;
+			flex-direction: row;
 		}
 
 		.header-text {
-			text-align: center;
+			text-align: end;
 		}
 
 		.content {
@@ -185,7 +184,13 @@
 		}
 
 		.readable-area {
-		margin: 0 20%;
+			margin: 0 10%;
+		}
 	}
+
+	@media (min-width: 1000px) {
+		.readable-area {
+			margin: 0 20%;
+		}
 	}
 </style>
