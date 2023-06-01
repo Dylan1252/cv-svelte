@@ -18,7 +18,7 @@ rel="stylesheet">
 :global(html,body) {
     width: 100%;
     height: 100%;
-    background: #fffde7;
+    background: #f4fae7;
 }
 
 :global(*){

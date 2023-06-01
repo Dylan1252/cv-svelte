@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Section from '$components/Section.svelte';
+	import Section from '$lib/components/Section.svelte';
 	import book from 'svelte-awesome/icons/book';
 	import briefcase from 'svelte-awesome/icons/briefcase';
 	import cogs from 'svelte-awesome/icons/cogs';
@@ -9,99 +9,67 @@
 <div class="readable-area">
 	<a class="header" href="/secondRoute">
 		<div class="header-text">
-			<h1>Squarepants, Spongebob</h1>
-			<p>Head Chef</p>
+			<h1>Biology</h1>
+			<p>The Study of Life</p>
 		</div>
 		<img
-			alt="spongebob avatar"
+			alt="biology icon"
 			class="avatar"
-			src="https://play-lh.googleusercontent.com/9XA4q4TKYtF2l5oN10M8oumPauR9g5lFOAJXjczrd3Gmq9cwQ8QOQJ-2KZv84s1oTA"
+			src="https://cdn-icons-png.flaticon.com/512/2784/2784428.png"
 		/>
 	</a>
 
 	<div class="content">
 		<Section iconData={user} title="Profile">
 			<p>
-				Hello, my name is Spongebob Squarepants and I'm passionate about creating the best possible
-				food. In my spare time, I like to catch jellyfishes with my trusty net.
+				Biology is the scientific study of life and living organisms. It encompasses various sub-disciplines,
+				including molecular biology, cell biology, genetics, ecology, and more. The field of biology explores
+				the structure, function, evolution, and interactions of living organisms at different levels of organization.
+				Biology plays a crucial role in our understanding of life, health, and the natural world. It helps us
+				comprehend the complex mechanisms within cells, uncover the genetic basis of diseases, study ecosystems,
+				and develop innovations in medicine, agriculture, and conservation. By studying biology, we gain insights
+				into the diversity and interconnectedness of life forms on our planet.
 			</p>
 		</Section>
-		<Section iconData={book} title="Education">
+		<Section iconData={book} title="Branches of Biology">
 			<ul>
-				<li>
-					2011-2014
-					<br />
-					&emsp; Bikini Bottom High School
-				</li>
-				<li>
-					2014-2018
-					<br />
-					 &emsp; New Kelp City Culinary College
-				</li>
+				<li>Molecular Biology</li>
+				<li>Cell Biology</li>
+				 <li>Genetics</li>
+				<li>Ecology</li>
+				<li>Evolutionary Biology</li>
+				<li>Botany</li>
+				<li>Zoology</li>
+				<li>Microbiology</li>
+				<li>Physiology</li>
+				<li>Biotechnology</li>
 			</ul>
 		</Section>
-		<Section iconData={briefcase} title="Work History">
-			<ul>
-				<li>
-					Head Cook (2022 - ongoing)
-					<br />
-					&emsp; Krusty Krab, Inc.
-				</li>
-				<li>
-					Marketing Associate (2020 - 2022)
-					<br />
-					&emsp; Chum Bucket Ltd.
-				</li>
-				<li>
-					Jellyfish Catcher (2018 - 2020)
-					<br />
-					&emsp; Freelance
-				</li>
-			</ul>
+		<Section iconData={briefcase} title="Importance of Biology">
+			<p>
+				Biology plays a crucial role in our understanding of life, health, and the natural world. It helps us
+				comprehend the complex mechanisms within cells, uncover the genetic basis of diseases, study ecosystems,
+				and develop innovations in medicine, agriculture, and conservation. By studying biology, we gain insights
+				into the diversity and interconnectedness of life forms on our planet.
+			</p>
 		</Section>
-		<Section iconData={cogs} title="Skills">
+		<Section iconData={cogs} title="Uses">
 			<ul>
-				<li>
-					<span>Jellyfish Hunting</span>
-					<div class="gauge">
-						<div class="bullet filled-bullet"></div>
-						<div class="bullet filled-bullet"></div>
-						<div class="bullet filled-bullet"></div>
-						<div class="bullet filled-bullet"></div>
-						<div class="bullet filled-bullet"></div>
-					</div>
-				</li>
-				<li>
-					<span>English</span>
-					<div class="gauge">
-						<div class="bullet filled-bullet"></div>
-						<div class="bullet filled-bullet"></div>
-						<div class="bullet filled-bullet"></div>
-						<div class="bullet filled-bullet"></div>
-						<div class="bullet"></div>
-					</div>
-				</li>
-				<li>
-					<span>Whale Singing</span>
-					<div class="gauge">
-						<div class="bullet filled-bullet"></div>
-						<div class="bullet filled-bullet"></div>
-						<div class="bullet filled-bullet"></div>
-						<div class="bullet"></div>
-						<div class="bullet"></div>
-					</div>
-				</li>
+				<li>Scientific Research</li>
+				<li>Data Analysis</li>
+				<li>Lab Techniques</li>
 			</ul>
 		</Section>
 	</div>
 </div>
 
 <style>
+	/* CSS styles for the biology page */
 	.readable-area {
 		display: flex;
 		flex-direction: column;
-		background-color: #ffffff;
-		margin: 0 5%;
+		background-color: #fcfcbb;
+		padding: 5px;
 	}
 
 	.header {
@@ -135,11 +103,13 @@
 		display: grid;
 		grid-template-columns: repeat(1, minmax(0, 1fr));
 		gap: 32px;
-		padding: 32px 32px;
+		padding: 32px;
 	}
 
 	ul {
 		list-style-type: none;
+		margin-left: 0;
+		padding-left: 0;
 	}
 
 	li {
@@ -163,34 +133,12 @@
 		width: 16px;
 		height: 16px;
 		margin: 4px;
-		background-color: #fff59d;
+		background-color: #f0eeda;
 	}
 
 	.filled-bullet {
 		background-color: #F9FBE7;
 	}
 
-	@media (min-width: 600px) {
-		.header {
-			flex-direction: row;
-		}
-
-		.header-text {
-			text-align: end;
-		}
-
-		.content {
-			grid-template-columns: repeat(2, minmax(0, 1fr));
-		}
-
-		.readable-area {
-			margin: 0 10%;
-		}
-	}
-
-	@media (min-width: 1000px) {
-		.readable-area {
-			margin: 0 20%;
-		}
-	}
+	
 </style>
