@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Section from 'components/Section.svelte';
+	import Section from '$components/Section.svelte';
 	import book from 'svelte-awesome/icons/book';
 	import briefcase from 'svelte-awesome/icons/briefcase';
 	import cogs from 'svelte-awesome/icons/cogs';
